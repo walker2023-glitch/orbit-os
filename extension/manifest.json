@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Orbit OS Gate Prototype",
+  "description": "Local YouTube Focus Gate prototype for testing on a Chromebook.",
+  "version": "0.1.0",
+  "permissions": ["declarativeNetRequest", "storage"],
+  "host_permissions": ["*://youtube.com/*", "*://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Orbit OS test controls",
+    "default_popup": "popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["pages/focus-gate.html", "pages/focus-gate.css"],
+      "matches": ["*://youtube.com/*", "*://*.youtube.com/*"]
+    }
+  ]
+}
